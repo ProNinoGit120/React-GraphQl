@@ -84,6 +84,7 @@
     "tap": "^14.4.3"
   },
   "scripts": {
+<<<<<<< HEAD
     "prepare": "npm run prepare:clean && npm run prepare:mjs && npm run prepare:js && npm run prepare:jsdoc && npm run prepare:prettier",
     "prepare:clean": "rm -rf universal server test",
     "prepare:mjs": "BABEL_ESM=1 babel src -d . --keep-file-extension",
@@ -97,4 +98,107 @@
     "test:size": "size-limit",
     "prepublishOnly": "npm test"
   }
+=======
+    "build:clean": "rimraf lib",
+    "build:js": "babel src -d lib",
+    "build:mjs": "BABEL_ESM=1 babel src -d lib --keep-file-extension",
+    "build:jsdoc": "documentation readme src --readme-file readme.md -s API -c documentation.json --sort-order alpha -q",
+    "build:prettier": "prettier 'lib/**/*.{mjs,js}' readme.md --write",
+    "lint:eslint": "eslint . --ext mjs,js",
+    "lint:prettier": "prettier '**/*.{json,md}' -l",
+    "lint:jsdoc": "documentation lint src",
+    "lint:size": "size-limit",
+    "tap:mjs": "node --experimental-modules --no-warnings lib/test | tap-mocha-reporter spec",
+    "tap:js": "node lib/test | tap-mocha-reporter spec",
+    "test": "FORCE_COLOR=1 TAP_COLORS=1 npm-run-all build:clean -p build:js build:mjs build:jsdoc -s build:prettier -p lint:* tap:* -c --aggregate-output --silent",
+    "watch": "watch 'npm test --silent' src --interval 1",
+    "prepublishOnly": "npm test",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{mjs,js}": "eslint",
+    "*.{json,md}": "prettier -l"
+  },
+  "eslintIgnore": [
+    "lib",
+    "tap-snapshots"
+  ],
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "script",
+      "ecmaVersion": 2018
+    },
+    "env": {
+      "es6": true,
+      "node": true,
+      "browser": true
+    },
+    "plugins": [
+      "import",
+      "node",
+      "react",
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/recommended",
+      "plugin:node/recommended",
+      "plugin:react/recommended",
+      "prettier",
+      "prettier/react"
+    ],
+    "rules": {
+      "require-jsdoc": "warn",
+      "valid-jsdoc": [
+        "error",
+        {
+          "requireReturn": false
+        }
+      ],
+      "require-await": "error",
+      "no-return-await": "error",
+      "arrow-body-style": "error",
+      "prefer-arrow-callback": "error",
+      "curly": [
+        "error",
+        "multi"
+      ],
+      "prefer-destructuring": "error",
+      "import/first": "error",
+      "import/newline-after-import": "error",
+      "import/no-useless-path-segments": "error",
+      "import/order": "error",
+      "node/no-unsupported-features": "off",
+      "prettier/prettier": "error"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.mjs"
+        ],
+        "parserOptions": {
+          "sourceType": "module"
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "semi": false
+  },
+  "size-limit": [
+    {
+      "name": "CJS",
+      "path": "lib/index.js",
+      "limit": "4 KB"
+    },
+    {
+      "name": "ESM",
+      "path": "lib/index.mjs",
+      "limit": "4 KB"
+    }
+  ]
+>>>>>>> Revert the previous commit.
 }
