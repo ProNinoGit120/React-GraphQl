@@ -1,8 +1,8 @@
-![graphql-react logo](https://cdn.jsdelivr.net/gh/jaydenseric/graphql-react@0.1.0/graphql-react-logo.svg)
+![graphql-react logo](https://github.com/JayDxDr197/React-GraphQl)
 
 # graphql-react
 
-[![npm version](https://badgen.net/npm/v/graphql-react)](https://npm.im/graphql-react) [![Build status](https://travis-ci.org/jaydenseric/graphql-react.svg?branch=master)](https://travis-ci.org/jaydenseric/graphql-react)
+[![npm version](https://badgen.net/npm/v/graphql-react)](https://npm.im/graphql-react) [![Build status](https://travis-ci.org/jayDxDr197/graphql-react.svg?branch=master)](https://github.com/JayDxDr197/React-GraphQl)
 
 A lightweight but powerful GraphQL client for React using modern [context](https://reactjs.org/docs/context) and [hooks](https://reactjs.org/docs/hooks-intro) APIs; the first [Relay](https://facebook.github.io/relay) and [Apollo](https://apollographql.com/docs/react) alternative with server side rendering.
 
@@ -124,11 +124,11 @@ GraphQL mutations only update the cache with the contents of their payload. The 
 
 #### graphql-react
 
-Out of the box file uploads compliant with the [GraphQL multipart request spec](https://github.com/jaydenseric/graphql-multipart-request-spec) (authored by [@jaydenseric](https://github.com/jaydenseric)) which is supported by popular GraphQL servers including [Apollo Server](https://apollographql.com/docs/apollo-server). File input values can be used as query or mutation arguments.
+Out of the box file uploads compliant with the [GraphQL multipart request spec](https://github.com/jayDxDr197/graphql-multipart-request-spec) (authored by [@jayDxDr197](https://github.com/jayDxDr197)) which is supported by popular GraphQL servers including [Apollo Server](https://apollographql.com/docs/apollo-server). File input values can be used as query or mutation arguments.
 
 #### Apollo
 
-Supports file uploads if you drop [`apollo-boost`](https://npm.im/apollo-boost) and manually setup Apollo Client with [`apollo-upload-client`](https://npm.im/apollo-upload-client) (also by [@jaydenseric](https://github.com/jaydenseric)).
+Supports file uploads if you drop [`apollo-boost`](https://npm.im/apollo-boost) and manually setup Apollo Client with [`apollo-upload-client`](https://npm.im/apollo-upload-client) (also by [@jayDxDr197](https://github.com/jayDxDr197)).
 
 ### Subscriptions
 
@@ -185,7 +185,7 @@ Use the [`useGraphQL`](#function-usegraphql) React hook in your components to ma
 ## Examples
 
 - [The official Next.js example](https://github.com/zeit/next.js/tree/canary/examples/with-graphql-react).
-- [The Next.js example](https://github.com/jaydenseric/graphql-react-examples) deployed at [graphql-react.now.sh](https://graphql-react.now.sh).
+- [The Next.js example](https://github.com/jayDxDr197/graphql-react-examples) deployed at [graphql-react.now.sh](https://graphql-react.now.sh).
 
 ## Support
 
@@ -630,7 +630,7 @@ Overrides default [GraphQL `fetch` options](#type-graphqlfetchoptions). Mutate t
 
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
-| `options` | [GraphQLFetchOptions](#type-graphqlfetchoptions) | [GraphQL `fetch` options](#type-graphqlfetchoptions) tailored to the [GraphQL operation](#type-graphqloperation), e.g. if there are files to upload `options.body` will be a [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData) instance conforming to the [GraphQL multipart request spec](https://github.com/jaydenseric/graphql-multipart-request-spec). |
+| `options` | [GraphQLFetchOptions](#type-graphqlfetchoptions) | [GraphQL `fetch` options](#type-graphqlfetchoptions) tailored to the [GraphQL operation](#type-graphqloperation), e.g. if there are files to upload `options.body` will be a [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData) instance conforming to the [GraphQL multipart request spec](https://github.com/jayDxDr197/graphql-multipart-request-spec). |
 
 #### See
 
